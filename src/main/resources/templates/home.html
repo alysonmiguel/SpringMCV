@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymelaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<div th:text="${jogo}" />-->
+
+<h1> Lista de Jogos</h1>
+<a href="/cadastrar">Cadastrar jogo</a>
+<table>
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>Nome</td>
+        <td>Descrição</td>
+        <td>Categoria</td>
+        <td>Lançamento</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="j : ${jogoList}" th:object="${j}">
+        <td th:text="*{id}" >ID</td>
+        <td th:text="*{nome}" >Nome</td>
+        <td th:text="*{descricao}" >Descrição</td>
+        <td th:text="${j.categoria}" >Categoria</td>
+        <td th:text="${j.anoLancamento}" >Lançamento</td>
+        <td>
+            <a th:href="@{'/editar/' + ${j.id}}">Editar</a> &nbsp;&nbsp;&nbsp;
+            <a th:href="@{'/deletar/' + ${j.id}}">Deletar </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+
+</body>
+</html>

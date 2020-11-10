@@ -7,7 +7,6 @@
 <body>
 <h1>Editar jogo </h1>
     <form th:action="@{/salvar}"  th:object="${jogo}" method="post">
-
         Id: <input type="text" th:field="*{id}"/> <br>
         Nome: <input type="text" th:field="*{nome}"/> <br>
         Descricao: <input type="text" th:field="*{descricao}"/> <br>

@@ -7,9 +7,16 @@
 <body>
 <form action="#" th:action="@{/salvar}" th:object="${novoJogo}" method="post" >
     Nome: <input type="text" th:field="*{nome}"/> <br>
+    <p th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" />
+
     Descricao: <input type="text" th:field="*{descricao}"/> <br>
+    <p th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}" />
+
     Categoria: <input type="text" th:field="*{categoria}"/> <br>
+
     Ano Lançamento: <input type="text" th:field="*{anoLancamento}"/> <br>
+    <p th:if="${#fields.hasErrors('anoLancamento')}" th:errors="*{anoLancamento}" />
+
 
     <button type="submit">Cadastrar</button>
 </form>
